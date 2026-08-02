@@ -1,12 +1,11 @@
-import Link from "next/link";
+import Counter from "../components/Counter";
 
 type Props = {}
 
 const page = (props: Props) => {
   return (
     <div>
-      <Link href="/counter">Counter</Link>
-      <Link href="/post">Post</Link>
+        <Counter/>
     </div>
   )
 };
