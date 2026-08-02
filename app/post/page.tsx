@@ -1,14 +1,24 @@
-import Card from "../components/Card";
+import Card from "@/app/components/Card";
 import posts from "@/lib/posts";
-type Props = {}
+import Link from "next/link";
+
+type Props = {
+    id:number;
+    title:string;
+    description:string;
+}
 
 const page = (props: Props) => {
-  return (
-    <div>
+    return (
+        <div>
 
-        {posts.map((post)=>(<Card key={post.id} title={post.title} description={post.description}/>))}
-    </div>
-  )
+{posts.map((post) => (
+  <Link key={post.id} href={`/post/${post.id}`}>
+    <Card title={post.title} description={post.description} />
+  </Link>
+))}
+        </div>
+    )
 };
 
 export default page;
